@@ -1,0 +1,216 @@
+@import "_mini-reset";
+@import url(https://fonts.googleapis.com/css?family=Fira+Mono:400,700);
+
+
+/*
+ :::  Variables
+-------------------------------------------------- */
+
+// sizes and fonts
+$sans_serif: 'Fira Mono', monospace;
+$normaltext: 400;
+$strongtext: 700;
+$basefont: 17;
+
+// color
+$blue: #4ECDC4;
+$yellow: #C7F464;
+$red: #FF6B6B;
+$white: #fff;
+$grey: #556270;
+$black: darken($grey, 20);
+
+
+
+// hovershortcut
+$hover: "&:focus, &:hover, &:active";
+
+// wrapping
+$wrap: 5.6339%;
+$unwrap: ((100%*$wrap)/(100%-(2*$wrap)));
+
+
+/*
+ :::  mixins and functions
+-------------------------------------------------- */
+
+@function em($target, $context: $basefont) {
+	@return ($target / $context) * 1em;
+}
+
+
+@mixin clearfix() {
+	&:after {
+		content: "";
+		display: table;
+		clear: both;
+	}
+}
+
+@mixin hidetext() {
+	text-indent: 100%;
+	white-space: nowrap;
+	overflow: hidden;
+}
+
+
+/*
+ :::  Basics
+-------------------------------------------------- */
+
+::selection {
+	background: $yellow;
+	color: #fff;
+	text-shadow: none;
+}
+::-moz-selection {
+	background: $yellow;
+	color: #fff;
+	text-shadow: none;
+}
+
+
+// Font stuff
+body,
+input,
+select,
+button,
+textarea {
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+	-webkit-text-size-adjust: 100%;
+}
+
+h1,
+h2 {
+	-webkit-font-smoothing: subpixel-antialiased;
+	text-rendering: optimizeLegibility
+}
+
+
+body,
+input,
+select,
+button,
+textarea {
+	font-family: $sans_serif;
+	font-size: 1em;
+	line-height: 1;
+	font-weight: $normaltext;
+	color: $white;
+	background: $black;
+}
+
+
+strong {
+	font-weight: $strongtext;
+}
+
+em {
+	font-style: italic;
+}
+
+hr {
+	display: block;
+	border-top: 1px solid $yellow;
+}
+
+img {
+	border: none; //IE8
+	vertical-align: middle; // removes 3px margin-bottom http://stackoverflow.com/a/10844318
+}
+
+a {
+	color: $red;
+	#{$hover} {
+		text-decoration: underline;
+	}
+}
+
+button {
+	background: none;
+}
+
+/*
+ :::  Header
+-------------------------------------------------- */
+
+header {
+	padding: 1em $wrap;
+	background: $grey;
+	text-align: center;
+	font-size: 1.4em;
+	position: relative;
+	button {
+		position: absolute;
+		right: $unwrap;
+		font-size: 1.3em;
+		top: 50%;
+		transform: translateY(-50%);
+		outline: none;
+	}
+}
+
+/*
+ :::  Main
+-------------------------------------------------- */
+main {
+	padding: $wrap;
+}
+
+
+
+.trip {
+	margin-bottom: 2em;
+	position: relative;
+	border-bottom: 2px solid $blue;
+	padding-bottom: 1em;
+	margin-bottom: 1.3em;
+	.departure {
+		text-align: center;
+		position: relative;
+		.time {
+			// border-bottom: 1px solid $blue;
+			font-size: 2em;
+			margin-bottom: .1em;
+			// padding-bottom: .3em;
+			display: inline-block;
+		}
+		.delay:not(:empty) {
+			position: absolute;
+			bottom: 0;
+			display: inline-block;
+			border: 1px solid $yellow;
+			font-size: em(14);
+			width: 2em;
+			height: 2em;
+			line-height: 1.45em;
+			padding: .3em;
+			border-radius: 50%;
+			letter-spacing: -.15em;
+			text-indent: -.2em;
+			margin-left: .3em;
+		}
+	}
+	.timeleft {
+		padding: .3em .4em .1em;
+		text-align: center;
+		margin-bottom: 1em;
+		&.easy {
+			color: $yellow;
+		}
+		&.hurry {
+			color: $red;
+		}
+	}
+	.details {
+		white-space: nowrap;
+		overflow: hidden;
+		text-overflow: ellipsis;
+		.line {
+			border-right: 1px solid white;
+			padding-right: .8em;
+			margin-right: .4em;
+		}
+	}
+}

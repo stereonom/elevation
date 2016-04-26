@@ -1,0 +1,166 @@
+/*
+ :::  Reset
+-------------------------------------------------- */
+@import url(https://fonts.googleapis.com/css?family=Fira+Mono:400,700);
+html {
+  box-sizing: border-box;
+  overflow-y: -moz-scrollbars-vertical;
+  overflow-y: scroll; }
+
+*, *::before, *::after {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  box-sizing: inherit;
+  -webkit-text-size-adjust: 100%;
+  text-size-adjust: 100%; }
+
+article, aside, details, figcaption, figure,
+footer, header, hgroup, main, nav, section, subhead, summary {
+  display: block; }
+
+ol, ul {
+  list-style: none; }
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0; }
+
+/*-------------------------------------------------- */
+/*
+ :::  Variables
+-------------------------------------------------- */
+/*
+ :::  mixins and functions
+-------------------------------------------------- */
+/*
+ :::  Basics
+-------------------------------------------------- */
+::selection {
+  background: #C7F464;
+  color: #fff;
+  text-shadow: none; }
+
+::-moz-selection {
+  background: #C7F464;
+  color: #fff;
+  text-shadow: none; }
+
+body,
+input,
+select,
+button,
+textarea {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-text-size-adjust: 100%; }
+
+h1,
+h2 {
+  -webkit-font-smoothing: subpixel-antialiased;
+  text-rendering: optimizeLegibility; }
+
+body,
+input,
+select,
+button,
+textarea {
+  font-family: "Fira Mono", monospace;
+  font-size: 1em;
+  line-height: 1;
+  font-weight: 400;
+  color: #fff;
+  background: #292f36; }
+
+strong {
+  font-weight: 700; }
+
+em {
+  font-style: italic; }
+
+hr {
+  display: block;
+  border-top: 1px solid #C7F464; }
+
+img {
+  border: none;
+  vertical-align: middle; }
+
+a {
+  color: #FF6B6B; }
+  a:focus, a:hover, a:active {
+    text-decoration: underline; }
+
+button {
+  background: none; }
+
+/*
+ :::  Header
+-------------------------------------------------- */
+header {
+  padding: 1em 5.6339%;
+  background: #556270;
+  text-align: center;
+  font-size: 1.4em;
+  position: relative; }
+  header button {
+    position: absolute;
+    right: 6.3493297811%;
+    font-size: 1.3em;
+    top: 50%;
+    transform: translateY(-50%);
+    outline: none; }
+
+/*
+ :::  Main
+-------------------------------------------------- */
+main {
+  padding: 5.6339%; }
+
+.trip {
+  margin-bottom: 2em;
+  position: relative;
+  border-bottom: 2px solid #4ECDC4;
+  padding-bottom: 1em;
+  margin-bottom: 1.3em; }
+  .trip .departure {
+    text-align: center;
+    position: relative; }
+    .trip .departure .time {
+      font-size: 2em;
+      margin-bottom: .1em;
+      display: inline-block; }
+    .trip .departure .delay:not(:empty) {
+      position: absolute;
+      bottom: 0;
+      display: inline-block;
+      border: 1px solid #C7F464;
+      font-size: 0.8235294118em;
+      width: 2em;
+      height: 2em;
+      line-height: 1.45em;
+      padding: .3em;
+      border-radius: 50%;
+      letter-spacing: -.15em;
+      text-indent: -.2em;
+      margin-left: .3em; }
+  .trip .timeleft {
+    padding: .3em .4em .1em;
+    text-align: center;
+    margin-bottom: 1em; }
+    .trip .timeleft.easy {
+      color: #C7F464; }
+    .trip .timeleft.hurry {
+      color: #FF6B6B; }
+  .trip .details {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis; }
+    .trip .details .line {
+      border-right: 1px solid white;
+      padding-right: .8em;
+      margin-right: .4em; }
+
+/*# sourceMappingURL=do_not_edit_this.css.map */
