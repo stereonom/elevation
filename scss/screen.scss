@@ -1,5 +1,5 @@
 @import "_mini-reset";
-@import url(https://fonts.googleapis.com/css?family=Fira+Mono:400,700);
+@import url(https://fonts.googleapis.com/css?family=Fira+Mono:400);
 
 
 /*
@@ -9,7 +9,6 @@
 // sizes and fonts
 $sans_serif: 'Fira Mono', monospace;
 $normaltext: 400;
-$strongtext: 700;
 $basefont: 17;
 
 // color
@@ -99,14 +98,6 @@ textarea {
 	font-weight: $normaltext;
 	color: $white;
 	background: $black;
-}
-
-strong {
-	font-weight: $strongtext;
-}
-
-em {
-	font-style: italic;
 }
 
 hr {
@@ -335,6 +326,7 @@ main {
 	margin-bottom: 2.2em;
 	.journey {
 		border-bottom: 1px solid $grey;
+		position: relative;
 		&:last-child{
 			border-bottom: none;
 		}
@@ -362,15 +354,16 @@ main {
 			}
 		}
 		.delete {
-			font-size: 1.5em;
+			font-size: 1.3em;
 			float: right;
-			width: 1em;
-			line-height: 1;
-			height: 1em;
+			width: 1.4em;
+			outline: 0;
+			height: 1.4em;
+			line-height: 0;
 			background-color: $red;
 			border-radius: 50%;
-			position: relative;
-			top: .5em;
+			font-family: arial;
+			transform: translateY(50%);
 		}
 	}
 }

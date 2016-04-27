@@ -2,7 +2,7 @@
 /*
  :::  Reset
 -------------------------------------------------- */
-@import url(https://fonts.googleapis.com/css?family=Fira+Mono:400,700);
+@import url(https://fonts.googleapis.com/css?family=Fira+Mono:400);
 html {
   box-sizing: border-box;
   overflow-y: -moz-scrollbars-vertical;
@@ -75,12 +75,6 @@ textarea {
   font-weight: 400;
   color: #fff;
   background: #292f36; }
-
-strong {
-  font-weight: 700; }
-
-em {
-  font-style: italic; }
 
 hr {
   display: block;
@@ -267,7 +261,8 @@ main {
   padding-bottom: 2em;
   margin-bottom: 2.2em; }
   .journeys .journey {
-    border-bottom: 1px solid #556270; }
+    border-bottom: 1px solid #556270;
+    position: relative; }
     .journeys .journey:last-child {
       border-bottom: none; }
     .journeys .journey .goto {
@@ -291,15 +286,16 @@ main {
         transform: rotate(90deg);
         transform-origin: center 0; }
     .journeys .journey .delete {
-      font-size: 1.5em;
+      font-size: 1.3em;
       float: right;
-      width: 1em;
-      line-height: 1;
-      height: 1em;
+      width: 1.4em;
+      outline: 0;
+      height: 1.4em;
+      line-height: 0;
       background-color: #FF6B6B;
       border-radius: 50%;
-      position: relative;
-      top: .5em; }
+      font-family: arial;
+      transform: translateY(50%); }
 
 main h1 {
   font-size: 1.1em;
