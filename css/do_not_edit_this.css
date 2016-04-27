@@ -1,3 +1,4 @@
+@charset "UTF-8";
 /*
  :::  Reset
 -------------------------------------------------- */
@@ -62,6 +63,7 @@ h2 {
   -webkit-font-smoothing: subpixel-antialiased;
   text-rendering: optimizeLegibility; }
 
+html,
 body,
 input,
 select,
@@ -82,14 +84,15 @@ em {
 
 hr {
   display: block;
-  border-top: 1px solid #C7F464; }
+  border-top: 1px solid #4ECDC4;
+  margin: 1.5em 0; }
 
 img {
   border: none;
   vertical-align: middle; }
 
 a {
-  color: #FF6B6B; }
+  color: #C7F464; }
   a:focus, a:hover, a:active {
     text-decoration: underline; }
 
@@ -104,7 +107,11 @@ header {
   background: #556270;
   text-align: center;
   font-size: 1.4em;
-  position: relative; }
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 10; }
   header button {
     position: absolute;
     right: 6.3493297811%;
@@ -117,14 +124,23 @@ header {
  :::  Main
 -------------------------------------------------- */
 main {
-  padding: 5.6339%; }
+  padding: 6em 5.6339% 1em; }
 
 .trip {
-  margin-bottom: 2em;
   position: relative;
   border-bottom: 2px solid #4ECDC4;
-  padding-bottom: 1em;
-  margin-bottom: 1.3em; }
+  padding-bottom: 1.2em;
+  margin-bottom: 1.5em; }
+  .trip .line {
+    position: absolute;
+    top: 0;
+    right: 0;
+    display: inline-block;
+    padding: .25em .3em .05em;
+    border: 1px solid #556270;
+    background: #3f4953;
+    text-align: center;
+    min-width: 2.4em; }
   .trip .departure {
     text-align: center;
     position: relative; }
@@ -149,18 +165,89 @@ main {
   .trip .timeleft {
     padding: .3em .4em .1em;
     text-align: center;
-    margin-bottom: 1em; }
+    margin-bottom: .5em; }
     .trip .timeleft.easy {
       color: #C7F464; }
     .trip .timeleft.hurry {
       color: #FF6B6B; }
   .trip .details {
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis; }
-    .trip .details .line {
-      border-right: 1px solid white;
-      padding-right: .8em;
-      margin-right: .4em; }
+    display: block;
+    outline: 0;
+    width: 100%;
+    text-align: left; }
+    .trip .details .lineover {
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      padding-right: 1em;
+      position: relative; }
+      .trip .details .lineover:after {
+        content: '⦾';
+        position: absolute;
+        right: 0;
+        top: .1em;
+        color: #556270; }
+    .trip .details .stationlist {
+      border-top: 1px dashed #4ECDC4;
+      padding-top: 1em;
+      margin-top: 1em; }
+      .trip .details .stationlist.hidden {
+        display: none; }
+      .trip .details .stationlist li {
+        list-style: circle;
+        list-style-position: inside;
+        margin-bottom: .1em;
+        margin-left: 1.5em;
+        line-height: 1.2;
+        white-space: normal;
+        text-indent: -1.08em; }
+
+.settings .location {
+  margin-bottom: 1em; }
+  .settings .location .label {
+    display: block;
+    margin-bottom: .5em; }
+  .settings .location input {
+    appearance: none;
+    border-radius: 0;
+    border: 1px solid #C7F464;
+    width: 100%;
+    display: block;
+    padding: .3em .5em .1em;
+    line-height: 1.5; }
+    .settings .location input:placeholder-shown {
+      border-color: white; }
+    .settings .location input:invalid {
+      border-color: #FF6B6B; }
+  .settings .location.walk input {
+    width: 30%;
+    text-align: right;
+    display: inline-block; }
+.settings .submit button {
+  border: 1px solid white;
+  display: block;
+  padding: .4em .5em .2em;
+  line-height: 1.5;
+  width: 100%;
+  background: #556270;
+  user-select: none; }
+  .settings .submit button:focus, .settings .submit button:hover, .settings .submit button:active {
+    background: #C7F464;
+    color: #292f36;
+    border-color: #C7F464; }
+
+main h1 {
+  font-size: 1.1em;
+  margin-bottom: .6em;
+  line-height: 1.2; }
+main p {
+  margin-bottom: .3em; }
+
+footer {
+  padding: 1em 5.6339%;
+  margin-top: 2em;
+  text-align: right;
+  position: absolute;
+  top: calc(100vh + 2em); }
 
 /*# sourceMappingURL=do_not_edit_this.css.map */

@@ -87,7 +87,7 @@ h2 {
 	text-rendering: optimizeLegibility
 }
 
-
+html,
 body,
 input,
 select,
@@ -101,7 +101,6 @@ textarea {
 	background: $black;
 }
 
-
 strong {
 	font-weight: $strongtext;
 }
@@ -112,7 +111,8 @@ em {
 
 hr {
 	display: block;
-	border-top: 1px solid $yellow;
+	border-top: 1px solid $blue;
+	margin: 1.5em 0;
 }
 
 img {
@@ -121,7 +121,7 @@ img {
 }
 
 a {
-	color: $red;
+	color: $yellow;
 	#{$hover} {
 		text-decoration: underline;
 	}
@@ -140,7 +140,11 @@ header {
 	background: $grey;
 	text-align: center;
 	font-size: 1.4em;
-	position: relative;
+	position: fixed;
+	top: 0;
+	left: 0;
+	right: 0;
+	z-index: 10;
 	button {
 		position: absolute;
 		right: $unwrap;
@@ -155,17 +159,27 @@ header {
  :::  Main
 -------------------------------------------------- */
 main {
-	padding: $wrap;
+	padding: 6em $wrap 1em;
 }
 
 
 
 .trip {
-	margin-bottom: 2em;
 	position: relative;
 	border-bottom: 2px solid $blue;
-	padding-bottom: 1em;
-	margin-bottom: 1.3em;
+	padding-bottom: 1.2em;
+	margin-bottom: 1.5em;
+	.line {
+		position: absolute;
+		top: 0;
+		right: 0;
+		display: inline-block;
+		padding: .25em .3em .05em;
+		border: 1px solid $grey;
+		background: darken($grey, 10);
+		text-align: center;
+		min-width: 2.4em;
+	}
 	.departure {
 		text-align: center;
 		position: relative;
@@ -195,7 +209,7 @@ main {
 	.timeleft {
 		padding: .3em .4em .1em;
 		text-align: center;
-		margin-bottom: 1em;
+		margin-bottom: .5em;
 		&.easy {
 			color: $yellow;
 		}
@@ -204,13 +218,104 @@ main {
 		}
 	}
 	.details {
-		white-space: nowrap;
-		overflow: hidden;
-		text-overflow: ellipsis;
-		.line {
-			border-right: 1px solid white;
-			padding-right: .8em;
-			margin-right: .4em;
+		display: block;
+		outline: 0;
+		width: 100%;
+		text-align: left;
+		.lineover {
+			white-space: nowrap;
+			overflow: hidden;
+			text-overflow: ellipsis;
+			padding-right: 1em;
+			position: relative;
+			&:after {
+				content: '⦾';
+				position: absolute;
+				right: 0;
+				top: .1em;
+				color: $grey;
+			}
+		}
+		.stationlist {
+			border-top: 1px dashed $blue;
+			padding-top: 1em;
+			margin-top: 1em;
+			&.hidden {
+				display: none;
+			}
+			li {
+				list-style: circle;
+				list-style-position: inside;
+				margin-bottom: .1em;
+				margin-left: 1.5em;
+				line-height: 1.2;
+				white-space: normal;
+				text-indent: -1.08em;
+			}
 		}
 	}
+}
+
+
+.settings {
+	.location {
+		margin-bottom: 1em;
+		.label {
+			display: block;
+			margin-bottom: .5em;
+		}
+		input {
+			appearance: none;
+			border-radius: 0;
+			border: 1px solid $yellow;
+			width: 100%;
+			display: block;
+			padding: .3em .5em .1em;
+			line-height: 1.5;
+			&:placeholder-shown {
+				border-color: white;
+			}
+			&:invalid {
+				border-color: $red;
+			}
+		}
+		&.walk input {
+			width: 30%;
+			text-align: right;
+			display: inline-block;
+		}
+	}
+	.submit button {
+		border: 1px solid white;
+		display: block;
+		padding: .4em .5em .2em;
+		line-height: 1.5;
+		width: 100%;
+		background: $grey;
+		user-select:none;
+		#{$hover} {
+			background: $yellow;
+			color: $black;
+			border-color: $yellow;
+		}
+	}
+}
+
+main {
+	h1 {
+		font-size: 1.1em;
+		margin-bottom: .6em;
+		line-height: 1.2;
+	}
+	p {
+		margin-bottom: .3em;
+	}
+}
+
+footer {
+	padding: 1em $wrap;
+	margin-top: 2em;
+	text-align: right;
+	position: absolute;
+	top: calc(100vh + 2em);
 }
