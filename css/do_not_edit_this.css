@@ -71,7 +71,7 @@ button,
 textarea {
   font-family: "Fira Mono", monospace;
   font-size: 1em;
-  line-height: 1;
+  line-height: 1.1;
   font-weight: 400;
   color: #fff;
   background: #292f36; }
@@ -106,19 +106,42 @@ header {
   padding: 1em 5.6339%;
   background: #556270;
   text-align: center;
-  font-size: 1.4em;
+  font-size: 1.2em;
   position: fixed;
   top: 0;
   left: 0;
   right: 0;
   z-index: 10; }
-  header button {
+  header button.setting {
     position: absolute;
     right: 6.3493297811%;
     font-size: 1.3em;
     top: 50%;
     transform: translateY(-50%);
     outline: none; }
+  header button.nav {
+    outline: 0;
+    display: block;
+    margin-left: 1em;
+    width: 90%;
+    text-align: left;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap; }
+  header .journeynav {
+    margin-right: 1.8em;
+    line-height: 1;
+    font-size: 1em;
+    text-align: left;
+    position: relative; }
+    header .journeynav .arrow {
+      position: absolute;
+      left: 0;
+      top: 50%;
+      transform: translateY(-50%);
+      display: inline-block;
+      transform: rotate(90deg);
+      transform-origin: center 0; }
 
 /*
  :::  Main
@@ -236,6 +259,36 @@ main {
     color: #292f36;
     border-color: #C7F464; }
 
+.journeys {
+  border-bottom: 2px solid #4ECDC4;
+  padding-bottom: 2em;
+  margin-bottom: 2.2em; }
+  .journeys .journey {
+    border-bottom: 1px solid #556270; }
+    .journeys .journey:last-child {
+      border-bottom: none; }
+    .journeys .journey .goto {
+      width: calc(100% - 4em);
+      text-align: justify;
+      padding-top: 1.1em;
+      outline: 0; }
+      .journeys .journey .goto:after {
+        content: '';
+        width: 100%;
+        display: inline-block;
+        line-height: 0;
+        height: 0;
+        font-size: 0; }
+    .journeys .journey .delete {
+      font-size: 1.5em;
+      float: right;
+      width: 1em;
+      height: 1em;
+      background-color: #FF6B6B;
+      border-radius: 50%;
+      position: relative;
+      top: .5em; }
+
 main h1 {
   font-size: 1.1em;
   margin-bottom: .6em;
@@ -245,9 +298,11 @@ main p {
 
 footer {
   padding: 1em 5.6339%;
-  margin-top: 2em;
+  margin-top: 20em;
   text-align: right;
   position: absolute;
-  top: calc(100vh + 2em); }
+  top: calc(100vh + 2em);
+  right: 0;
+  font-size: .5em; }
 
 /*# sourceMappingURL=do_not_edit_this.css.map */

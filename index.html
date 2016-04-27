@@ -2,7 +2,7 @@
 <html lang="de">
 <head>
 	<meta charset="utf-8" />
-	<meta content="width=device-width, initial-scale=1" name="viewport">
+	<meta content="width=device-width, initial-scale=1, user-scalable=0" name="viewport">
 
 	<meta name="apple-mobile-web-app-capable" content="yes">
 	<meta name="apple-mobile-web-app-status-bar-style" content="black">
@@ -16,8 +16,10 @@
 <body>
 
 <header>
-	HBF ➔ Zell
-	<button type="button">⊙</button>
+	<div class="journeynav">
+		<button type="button" class="nav prev">Würzburg, Busbahnhof<span class="arrow">➔</span></button><button type="button" class="nav next">Margetshöchheim Falkenstraße</button>
+	</div>
+	<button type="button" class="setting">⊙</button>
 </header>
 
 <main>
@@ -115,6 +117,5 @@
 	<a href="impressum.html">Impressum</a>
 </footer>
 
-<script src="js/min/main.js"></script>
 </body>
 </html>

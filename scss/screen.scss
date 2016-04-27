@@ -95,7 +95,7 @@ button,
 textarea {
 	font-family: $sans_serif;
 	font-size: 1em;
-	line-height: 1;
+	line-height: 1.1;
 	font-weight: $normaltext;
 	color: $white;
 	background: $black;
@@ -139,19 +139,45 @@ header {
 	padding: 1em $wrap;
 	background: $grey;
 	text-align: center;
-	font-size: 1.4em;
+	font-size: 1.2em;
 	position: fixed;
 	top: 0;
 	left: 0;
 	right: 0;
 	z-index: 10;
-	button {
+	button.setting {
 		position: absolute;
 		right: $unwrap;
 		font-size: 1.3em;
 		top: 50%;
 		transform: translateY(-50%);
 		outline: none;
+	}
+	button.nav {
+		outline: 0;
+		display: block;
+		margin-left: 1em;
+		width: 90%;
+		text-align: left;
+		overflow: hidden;
+		text-overflow: ellipsis;
+		white-space: nowrap;
+	}
+	.journeynav {
+		margin-right: 1.8em;
+		line-height: 1;
+		font-size: 1em;
+		text-align: left;
+		position: relative;
+		.arrow {
+			position: absolute;
+			left: 0;
+			top: 50%;
+			transform: translateY(-50%);
+			display: inline-block;
+			transform: rotate(90deg);
+			transform-origin: center 0;
+		}
 	}
 }
 
@@ -301,6 +327,42 @@ main {
 	}
 }
 
+.journeys {
+	border-bottom: 2px solid $blue;
+	padding-bottom: 2em;
+	margin-bottom: 2.2em;
+	.journey {
+		border-bottom: 1px solid $grey;
+		&:last-child{
+			border-bottom: none;
+		}
+		.goto {
+			width: calc(100% - 4em);
+			text-align: justify;
+			padding-top: 1.1em;
+			outline: 0;
+			&:after {
+				content: '';
+				width: 100%;
+				display: inline-block;
+				line-height: 0;
+				height: 0;
+				font-size: 0;
+			}
+		}
+		.delete {
+			font-size: 1.5em;
+			float: right;
+			width: 1em;
+			height: 1em;
+			background-color: $red;
+			border-radius: 50%;
+			position: relative;
+			top: .5em;
+		}
+	}
+}
+
 main {
 	h1 {
 		font-size: 1.1em;
@@ -314,8 +376,10 @@ main {
 
 footer {
 	padding: 1em $wrap;
-	margin-top: 2em;
+	margin-top: 20em;
 	text-align: right;
 	position: absolute;
 	top: calc(100vh + 2em);
+	right: 0;
+	font-size: .5em;
 }
