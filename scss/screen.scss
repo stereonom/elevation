@@ -162,6 +162,9 @@ header {
 		overflow: hidden;
 		text-overflow: ellipsis;
 		white-space: nowrap;
+		&.prev {
+			margin-bottom: .3em;
+		}
 	}
 	.journeynav {
 		margin-right: 1.8em;
@@ -193,8 +196,8 @@ main {
 .trip {
 	position: relative;
 	border-bottom: 2px solid $blue;
-	padding-bottom: 1.2em;
-	margin-bottom: 1.5em;
+	padding-bottom: .4em;
+	margin-bottom: 1.8em;
 	.line {
 		position: absolute;
 		top: 0;
@@ -210,10 +213,8 @@ main {
 		text-align: center;
 		position: relative;
 		.time {
-			// border-bottom: 1px solid $blue;
 			font-size: 2em;
 			margin-bottom: .1em;
-			// padding-bottom: .3em;
 			display: inline-block;
 		}
 		.delay:not(:empty) {
@@ -263,9 +264,10 @@ main {
 			}
 		}
 		.stationlist {
-			border-top: 1px dashed $blue;
-			padding-top: 1em;
-			margin-top: 1em;
+			border-top: 2px dashed $blue;
+			padding-top: .8em;
+			margin-top: .6em;
+			margin-bottom: .2em;
 			&.hidden {
 				display: none;
 			}

@@ -128,6 +128,8 @@ header {
     overflow: hidden;
     text-overflow: ellipsis;
     white-space: nowrap; }
+    header button.nav.prev {
+      margin-bottom: .3em; }
   header .journeynav {
     margin-right: 1.8em;
     line-height: 1;
@@ -152,8 +154,8 @@ main {
 .trip {
   position: relative;
   border-bottom: 2px solid #4ECDC4;
-  padding-bottom: 1.2em;
-  margin-bottom: 1.5em; }
+  padding-bottom: .4em;
+  margin-bottom: 1.8em; }
   .trip .line {
     position: absolute;
     top: 0;
@@ -211,9 +213,10 @@ main {
         top: .1em;
         color: #556270; }
     .trip .details .stationlist {
-      border-top: 1px dashed #4ECDC4;
-      padding-top: 1em;
-      margin-top: 1em; }
+      border-top: 2px dashed #4ECDC4;
+      padding-top: .8em;
+      margin-top: .6em;
+      margin-bottom: .2em; }
       .trip .details .stationlist.hidden {
         display: none; }
       .trip .details .stationlist li {
